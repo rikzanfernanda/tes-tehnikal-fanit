@@ -1,0 +1,19 @@
+{
+  "name": "tes-logika",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest ./tests",
+    "prettier": "npx prettier . --write"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "prettier": "3.0.3"
+  }
+}

@@ -1,5 +1,5 @@
 function countWords(sentence) {
-    const specialChars = ['*', '_', '!', '=', '[', ']', '(', ')', '{', '}', '&'];
+    const specialChars = ['*', '_', '!', '=', '[', ']', '(', ')', '{', '}', '&', '@', '#', '$', '%', '^', '+', '<', '>'];
 
     const words = sentence.split(' ');
 

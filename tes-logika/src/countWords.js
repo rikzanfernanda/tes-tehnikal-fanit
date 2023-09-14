@@ -1,20 +1,40 @@
 function countWords(sentence) {
-    const specialChars = ['*', '_', '!', '=', '[', ']', '(', ')', '{', '}', '&', '@', '#', '$', '%', '^', '+', '<', '>'];
+    const specialChars = [
+        '*',
+        '_',
+        '!',
+        '=',
+        '[',
+        ']',
+        '(',
+        ')',
+        '{',
+        '}',
+        '&',
+        '@',
+        '#',
+        '$',
+        '%',
+        '^',
+        '+',
+        '<',
+        '>'
+    ]
 
-    const words = sentence.split(' ');
+    const words = sentence.split(' ')
 
-    let count = 0;
+    let count = 0
 
     for (const word of words) {
         for (const char of word) {
             if (specialChars.includes(char)) {
-                count++;
-                break;
+                count++
+                break
             }
         }
     }
 
-    return words.length - count;
+    return words.length - count
 }
 
 export default countWords

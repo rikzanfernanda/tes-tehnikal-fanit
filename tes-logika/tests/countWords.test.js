@@ -1,8 +1,10 @@
-import countWords from "../src/countWords"
+import countWords from '../src/countWords'
 
 describe('Hitung jumlah kata pada sebuah kalimat', () => {
     test('should return 5', () => {
-        expect(countWords('Saat meng*ecat tembok, Agung dib_antu oleh Raihan.')).toBe(5)
+        expect(
+            countWords('Saat meng*ecat tembok, Agung dib_antu oleh Raihan.')
+        ).toBe(5)
     })
 
     test('should return 3', () => {
@@ -10,6 +12,10 @@ describe('Hitung jumlah kata pada sebuah kalimat', () => {
     })
 
     test('should return 4', () => {
-        expect(countWords('Masing-masing anak mendap(atkan uang jajan ya=ng be&rbeda.')).toBe(4)
+        expect(
+            countWords(
+                'Masing-masing anak mendap(atkan uang jajan ya=ng be&rbeda.'
+            )
+        ).toBe(4)
     })
 })

@@ -21,4 +21,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::middleware([ApiMiddleware::class])->group(function () {
     Route::post('/presence', [PresenceController::class, 'createPresence'])->name('presence.create');
+
+    Route::post('/approve', [PresenceController::class, 'isApprove'])->name('presence.approve');
 });

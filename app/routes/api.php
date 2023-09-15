@@ -20,7 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::middleware([ApiMiddleware::class])->group(function () {
-    Route::post('/presence', [PresenceController::class, 'createPresence'])->name('presence.create');
+    Route::controller(PresenceController::class)->group(function () {
+        Route::get('/presences', 'index')->name('presences.index');
 
-    Route::post('/approve', [PresenceController::class, 'isApprove'])->name('presence.approve');
+        Route::post('/presences', 'createPresence')->name('presences.create');
+
+        Route::post('/approve', 'isApprove')->name('presences.approve');
+    });
 });

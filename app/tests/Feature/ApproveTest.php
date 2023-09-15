@@ -14,7 +14,7 @@ class ApproveTest extends TestCase
 
     public function test_approve_unauthorized()
     {
-        $res = $this->post(route('presence.approve'), [
+        $res = $this->post(route('presences.approve'), [
             'id_presences' => 1,
             'is_approve' => 1
         ]);
@@ -37,7 +37,7 @@ class ApproveTest extends TestCase
 
         $token = $res_login->json()['data']['authorization']['token'];
 
-        $res = $this->post(route('presence.approve'), [
+        $res = $this->post(route('presences.approve'), [
             'id_presences' => 1,
             'is_approve' => 0
         ], [
@@ -71,7 +71,7 @@ class ApproveTest extends TestCase
 
         $token = $res_login->json()['data']['authorization']['token'];
 
-        $res = $this->post(route('presence.create'), [
+        $res = $this->post(route('presences.create'), [
             'type' => 'IN',
             'waktu' => '2023-09-12 08:00:00'
         ], [
@@ -85,7 +85,7 @@ class ApproveTest extends TestCase
 
         $token_spv = $res_login_supervisor['data']['authorization']['token'];
 
-        $res_approve = $this->post(route('presence.approve'), [
+        $res_approve = $this->post(route('presences.approve'), [
             'id_presences' => $res['data']['id'],
             'is_approve' => 1
         ], [
@@ -110,7 +110,7 @@ class ApproveTest extends TestCase
 
         $token = $res_login->json()['data']['authorization']['token'];
 
-        $res = $this->post(route('presence.create'), [
+        $res = $this->post(route('presences.create'), [
             'type' => 'IN',
             'waktu' => '2023-09-12 08:00:00'
         ], [
@@ -124,7 +124,7 @@ class ApproveTest extends TestCase
 
         $token_spv = $res_login_supervisor['data']['authorization']['token'];
 
-        $res_approve = $this->post(route('presence.approve'), [
+        $res_approve = $this->post(route('presences.approve'), [
             'id_presences' => $res['data']['id'],
             'is_approve' => 1
         ], [

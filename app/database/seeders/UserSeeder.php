@@ -12,20 +12,22 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'nama' => 'Ananda Bayu',
-            'email' => 'bayu@gmail.com',
-            'npp' => '12345',
-            'npp_supervisor' => '11111',
-            'password' => bcrypt('12345')
-        ]);
+        $bayu = new User();
+        $bayu->id = 1;
+        $bayu->nama = 'Ananda Bayu';
+        $bayu->email = 'bayu@gmail.com';
+        $bayu->npp = '12345';
+        $bayu->npp_supervisor = '11111';
+        $bayu->password = bcrypt('12345');
+        $bayu->save();
 
-        User::create([
-            'nama' => 'Supervisor',
-            'email' => 'spv@gmail.com',
-            'npp' => '11111',
-            'npp_supervisor' => null,
-            'password' => bcrypt('12345')
-        ]);
+        $spv = new User();
+        $spv->id = 2;
+        $spv->nama = 'Supervisor';
+        $spv->email = 'spv@gmail.com';
+        $spv->npp = '11111';
+        $spv->npp_supervisor = null;
+        $spv->password = bcrypt('12345');
+        $spv->save();
     }
 }

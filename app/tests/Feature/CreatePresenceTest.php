@@ -12,7 +12,7 @@ class CreatePresenceTest extends TestCase
 
     public function test_create_presence_fail()
     {
-        $res = $this->post(route('presence.create'), [
+        $res = $this->post(route('presences.create'), [
             'type' => 'IN',
             'waktu' => '2023-09-12 08:00:00'
         ]);
@@ -35,7 +35,7 @@ class CreatePresenceTest extends TestCase
 
         $token = $res_login->json()['data']['authorization']['token'];
 
-        $res = $this->post(route('presence.create'), [
+        $res = $this->post(route('presences.create'), [
             'type' => 'IN',
             'waktu' => '2023-09-12 08:00:00'
         ], [

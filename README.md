@@ -21,6 +21,43 @@
 5. Run ```php artisan migrate```
 6. Run ```php artisan db:seed```
 
-### Testing APIs
+### Testing API
 1. Setup ```.env.testing``` file (copy from .env file with different database)
 2. Run ```php artisan test```
+
+### Endpoint API
+#### 1. Login
+- ```/api/login```
+- Metode: POST
+- Authorization: no
+- Body (e.g):
+```json
+{
+    "email": "bayu@gmail.com",
+    "password": "12345"
+}
+```
+
+#### 2. Create Presences/Absensi
+- ```/api/presences```
+- Metode: POST
+- Authorization: yes
+- Body (e.g):
+```json
+"type": "IN",
+"waktu": "2023-09-15 08:00:00"
+```
+#### 3. Approve Presences/Absensi
+- ```/api/approve```
+- Metode: POST
+- Authorization: yes
+- Body (e.g):
+```json
+"id_presences": 1,
+"is_approve": 1
+```
+
+#### 4. Get Data Presences/Absensi
+- ```/api/presences```
+- Metode: GET
+- Authorization: yes
